@@ -19,6 +19,7 @@
 		D04D23C32A57F770007F40D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D04D23C52A57F773007F40D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D04D23C82A57F773007F40D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D04D23CF2A57F9A0007F40D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +36,7 @@
 		D04D23B52A57F770007F40D0 = {
 			isa = PBXGroup;
 			children = (
+				D04D23CF2A57F9A0007F40D0 /* README.md */,
 				D04D23C02A57F770007F40D0 /* CryptoCoins */,
 				D04D23BF2A57F770007F40D0 /* Products */,
 			);
