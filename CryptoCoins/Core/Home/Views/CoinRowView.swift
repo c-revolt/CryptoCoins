@@ -19,7 +19,6 @@ struct CoinRowView: View {
             if showHoldingsColumn {
                 centerColumn
             }
-            
             rightColumn
         }
         .font(.subheadline)
@@ -34,9 +33,7 @@ struct CoinRowView_Previews: PreviewProvider {
             CoinRowView(coin: dev.coin, showHoldingsColumn: true)
                 .previewLayout(.sizeThatFits)
                 .preferredColorScheme(.dark)
-            
         }
-        
     }
 }
 
@@ -47,7 +44,7 @@ extension CoinRowView {
                 .font(.caption)
                 .foregroundColor(Color.theme.secondaryText)
                 .frame(minWidth: 30)
-            Circle()
+            CoinImageView(coin: coin)
                 .frame(width: 30, height: 30)
             Text(coin.symbol.uppercased())
                 .font(.headline)
