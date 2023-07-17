@@ -25,6 +25,7 @@
 		D09A984B2A62678200A42063 /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09A984A2A62678200A42063 /* CoinImageService.swift */; };
 		D09A984D2A62695400A42063 /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09A984C2A62695400A42063 /* CoinImageViewModel.swift */; };
 		D0A1DF2F2A5BF00800B93F43 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1DF2E2A5BF00800B93F43 /* Color.swift */; };
+		D0C896B22A651B3D007D94DC /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C896B12A651B3C007D94DC /* LocalFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		D09A984A2A62678200A42063 /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
 		D09A984C2A62695400A42063 /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
 		D0A1DF2E2A5BF00800B93F43 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		D0C896B12A651B3C007D94DC /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				D09A98452A612D4E00A42063 /* NetworkingManager.swift */,
+				D0C896B12A651B3C007D94DC /* LocalFileManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				D040C4012A5C5426003B59BC /* CoinRowView.swift in Sources */,
 				D09A98402A5EED7800A42063 /* HomeViewModel.swift in Sources */,
 				D04D23C42A57F770007F40D0 /* ContentView.swift in Sources */,
+				D0C896B22A651B3D007D94DC /* LocalFileManager.swift in Sources */,
 				D040C3F42A5BFE05003B59BC /* HomeView.swift in Sources */,
 				D09A98492A62642800A42063 /* CoinImageView.swift in Sources */,
 				D04D23C22A57F770007F40D0 /* CryptoCoinsApp.swift in Sources */,
