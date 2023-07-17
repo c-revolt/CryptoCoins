@@ -26,7 +26,7 @@ final class LocalFileManager {
         do {
             try data.write(to: url)
         } catch let error {
-            print("Ошибка сохранения изображения. Имя изображения: \(imageName). Ошика: \(error)")
+            print("Ошибка сохранения изображения. Имя изображения: \(imageName). Ошибка: \(error)")
         }
     }
     
