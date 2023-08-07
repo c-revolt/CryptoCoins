@@ -22,7 +22,7 @@ struct PortfolioView: View {
                     coinLogoList
                     
                     if selectedCoin != nil {
-                        portfolionInputSection
+                        portfolioInputSection
                     }
                 }
             }
@@ -34,7 +34,11 @@ struct PortfolioView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                    trailingNavBarButtons
                 }
-                
+            }
+            .onChange(of: viewModel.searchText) { value in
+                if value == "" {
+                    removeSelectedCoin()
+                }
             }
         }
     }
@@ -52,13 +56,13 @@ extension PortfolioView {
     private var coinLogoList: some View {
         ScrollView(.horizontal, showsIndicators: false, content: {
             LazyHStack(spacing: 10) {
-                ForEach(viewModel.allCoins) { coin in
+                ForEach(viewModel.searchText.isEmpty ? viewModel.portfolioCoins : viewModel.allCoins) { coin in
                     CoinLogoView(coin: coin)
                         .frame(width: 75)
                         .padding(4)
                         .onTapGesture {
                             withAnimation(.easeIn) {
-                                selectedCoin = coin
+                                updateSelectedCoin(coin)
                             }
                         }
                         .background(
@@ -73,6 +77,17 @@ extension PortfolioView {
         })
     }
     
+    private func updateSelectedCoin(_ coin: CoinModel) {
+        selectedCoin = coin
+        
+        if let portfolioCoin = viewModel.portfolioCoins.first(where: { $0.id == coin.id }),
+           let amount = portfolioCoin.currentHoldings {
+            quantityText = "\(amount)"
+        } else {
+            quantityText = ""
+        }
+    }
+    
     private func getCurrentVlue() -> Double {
         if let quantity = Double(quantityText) {
             return quantity * (selectedCoin?.currentPrice ?? 0)
@@ -80,7 +95,7 @@ extension PortfolioView {
         return 0
     }
     
-    private var portfolionInputSection: some View {
+    private var portfolioInputSection: some View {
         VStack(spacing: 20) {
             HStack {
                 Text("Current price of \(selectedCoin?.symbol.uppercased() ?? ""):")
@@ -127,9 +142,13 @@ extension PortfolioView {
     }
     
     private func saveButtonPressed() {
-        guard let coin = selectedCoin else { return }
+        guard
+            let coin = selectedCoin,
+            let amount = Double(quantityText)
+        else { return }
         
         // save to portfolio
+        viewModel.updatePortfolio(coin: coin, amount: amount)
         
         // show checkmark
         withAnimation(.easeIn) {
